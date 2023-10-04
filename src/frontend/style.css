@@ -1,0 +1,203 @@
+  body {
+    font-family: 'Lato',sans-serif;
+    background-color: white;
+  }
+
+  .space-small {
+    padding-bottom: 8px;
+  }
+
+  .space {
+    padding-bottom: 16px;
+  }
+
+  .space-medium {
+    padding-bottom: 24px;
+  }
+
+  .space-large {
+    padding-bottom: 32px;
+  }
+
+  .flex-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image-header {
+    padding-top: 140px;
+    background: url('./assets/abrams_red.png'), url('./assets/abrams_green.png');
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: -130px -61px , calc(100% + 130px) calc(100% + -130px )
+  }
+
+  .image-footer {
+    min-height: 400px;
+    background: url('./assets/abrams_yellow.png');
+    background-size: 450px;
+    background-repeat: no-repeat;
+    background-position: calc(100% + 225px);
+  }
+
+  .important-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  #bulletList {
+    list-style-type: none;
+    padding: 24px;
+  }
+
+  #bulletList li {
+    display: flex;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  #bulletList li:before {
+    content: "\2022";
+    margin-right: 8px;
+  }
+  
+  #bulletList li:nth-child(1):before {
+    color: #b11a28;
+    font-size: 32px;
+  }
+  
+  #bulletList li:nth-child(2):before {
+    color: #4ca434;
+    font-size: 32px;
+  }
+  
+  #bulletList li:nth-child(3):before {
+    color: #e4c404;
+    font-size: 32px;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 60px solid #b11a28;
+  }
+
+  .triangle-mini {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #3b555b;
+  }
+
+  .triangle-mini-blu {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #0c346c;
+  }
+
+  .card-button {
+    padding: 14px 12px;
+    border-radius: 40px;
+    background-color: #0c346c;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .gradient-bkg {
+    background-image: linear-gradient(white,#e4c404,white);
+  }
+
+  .text-red {
+    color: #b11a28;
+  }
+
+  .text-yellow {
+    color: #e4c404;
+  }
+
+  .text-green {
+    color: #4ca434;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .subText {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .divider-green {
+    width: 250px;
+    border-bottom: 3px solid #4ca434;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #3b555b;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #3b555b;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+    color: #3b555b;
+  }
+
+  .logo {
+    width: 250px;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }

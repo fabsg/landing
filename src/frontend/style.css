@@ -171,7 +171,8 @@
   }
 
   .logo {
-    width: 5rem;
+    width: 80%;
+    max-width: 20rem;
   }
   
   form {

@@ -6,8 +6,8 @@ import { config } from 'dotenv';
 async function bootstrap() {
   config();
   const app = await NestFactory.create(AppModule);
-  const emailSchedulerService = app.get(EmailSchedulerService);
-  emailSchedulerService.sendEmailWithCSV();
+  //const emailSchedulerService = app.get(EmailSchedulerService);
+  //emailSchedulerService.sendEmailWithCSV();
   await app.listen(process.env.APPLICATION_PORT);
 }
 bootstrap();

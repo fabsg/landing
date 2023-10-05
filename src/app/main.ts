@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { EmailSchedulerService } from './emailScheduler/emailScheduler.services';
+//import { EmailSchedulerService } from './emailScheduler/emailScheduler.services';
 import { config } from 'dotenv';
 
 async function bootstrap() {

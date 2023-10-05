@@ -1,3 +1,8 @@
+  
+  html {
+    font-size: 18px;
+  }
+  
   body {
     font-family: 'Lato',sans-serif;
     background-color: white;
@@ -48,39 +53,39 @@
   }
 
   .important-text {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 
   #bulletList {
     list-style-type: none;
-    padding: 24px;
+    padding: 1.5rem;
   }
 
   #bulletList li {
     display: flex;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   #bulletList li:before {
     content: "\2022";
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
   
   #bulletList li:nth-child(1):before {
     color: #b11a28;
-    font-size: 32px;
+    font-size: 2rem;
   }
   
   #bulletList li:nth-child(2):before {
     color: #4ca434;
-    font-size: 32px;
+    font-size: 2rem;
   }
   
   #bulletList li:nth-child(3):before {
     color: #e4c404;
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .triangle {
@@ -113,7 +118,7 @@
     background-color: #0c346c;
     color: white;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .gradient-bkg {
@@ -137,7 +142,7 @@
   }
 
   .subText {
-    font-size: 12px;
+    font-size: 0.8rem;
     text-align: center;
     font-weight: 500;
   }
@@ -148,19 +153,19 @@
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin: 0;
     color: #3b555b;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 1rem;
     margin: 0;
     color: #3b555b;
   }
 
   p {
-    font-size: 16px;
+    font-size: 0.8rem;
     margin: 0;
     color: #3b555b;
   }

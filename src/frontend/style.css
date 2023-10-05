@@ -36,12 +36,20 @@
     width: 100%;
   }
 
+  .img-mini {
+    width: 2rem;
+  }
+
+  .gradient-img {
+    width: 12rem;
+  }
+
   .image-header {
-    padding-top: 2.8rem;
+    padding-top: 7rem;
     background: url('./assets/abrams_red.png'), url('./assets/abrams_green.png');
-    background-size: 6rem;
+    background-size: 75%;
     background-repeat: no-repeat;
-    background-position: -2.6rem -1.22rem , calc(100% + 2.6rem) calc(100% + -2.6rem )
+    background-position: -8rem -5rem , calc(100% + 9rem) calc(100% + -6.5rem )
   }
 
   .image-footer {
@@ -165,7 +173,7 @@
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     margin: 0;
     color: #3b555b;
   }

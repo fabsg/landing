@@ -1,6 +1,6 @@
   
   html {
-    font-size: 30px;
+    font-size: 50px;
   }
   
   body {
@@ -9,19 +9,19 @@
   }
 
   .space-small {
-    padding-bottom: 8px;
+    padding-bottom: 0.16rem;
   }
 
   .space {
-    padding-bottom: 16px;
+    padding-bottom: 0.32rem;
   }
 
   .space-medium {
-    padding-bottom: 24px;
+    padding-bottom: 0.48rem;
   }
 
   .space-large {
-    padding-bottom: 32px;
+    padding-bottom: 0.64rem;
   }
 
   .flex-center {
@@ -37,19 +37,19 @@
   }
 
   .image-header {
-    padding-top: 140px;
+    padding-top: 2.8rem;
     background: url('./assets/abrams_red.png'), url('./assets/abrams_green.png');
-    background-size: 300px;
+    background-size: 6rem;
     background-repeat: no-repeat;
-    background-position: -130px -61px , calc(100% + 130px) calc(100% + -130px )
+    background-position: -2.6rem -1.22rem , calc(100% + 2.6rem) calc(100% + -2.6rem )
   }
 
   .image-footer {
-    min-height: 400px;
+    min-height: 8rem;
     background: url('./assets/abrams_yellow.png');
-    background-size: 450px;
+    background-size: 9rem;
     background-repeat: no-repeat;
-    background-position: calc(100% + 225px);
+    background-position: calc(100% + 4.5rem);
   }
 
   .important-text {
@@ -91,30 +91,30 @@
   .triangle {
     width: 0;
     height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 60px solid #b11a28;
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-top: 1.2rem solid #b11a28;
   }
 
   .triangle-mini {
     width: 0;
     height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 30px solid #3b555b;
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-top: 0.6rem solid #3b555b;
   }
 
   .triangle-mini-blu {
     width: 0;
     height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 30px solid #0c346c;
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-top: 0.6rem solid #0c346c;
   }
 
   .card-button {
-    padding: 14px 12px;
-    border-radius: 40px;
+    padding: 0.28rem 0.24rem;
+    border-radius: 0.8rem;
     background-color: #0c346c;
     color: white;
     font-weight: bold;
@@ -148,7 +148,7 @@
   }
 
   .divider-green {
-    width: 250px;
+    width: 5rem;
     border-bottom: 3px solid #4ca434;
   }
 
@@ -171,7 +171,7 @@
   }
 
   .logo {
-    width: 250px;
+    width: 5rem;
   }
   
   form {

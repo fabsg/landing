@@ -185,24 +185,45 @@
   }
   
   form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 15rem;
+    padding: 1rem;
   }
   
   label {
     display: block;
-    margin-bottom: 10px;
+    font-size: 0.5rem;
+    color: white;
+    font-family: Helvetica, sans-serif;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    width: 100%;
+    background: url('./assets/bkg_blue.webp');
+    background-size: cover;
   }
   
   input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    height: 1rem;
+    padding: 0.15rem 0.3rem;
+    background-color: #fff;
+    color: #3b555b;
   }
+
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.4rem;
+  }
+
+  .flex-row {
+    display: flex;
+    gap: 0.2rem;
+  }
+
   
   button {
     background-color: #4caf50;

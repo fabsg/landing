@@ -5,11 +5,16 @@ html {
 
 body {
   margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
     background-color: whitesmoke;
     min-height: 100vh;
   }
 
+h1,
+h3 {
+  margin: 0;
+}
 .flex {
   display: flex;
 }
@@ -44,6 +49,9 @@ body {
 
 .space-lg {
   margin: 2rem 0;
+}
+.font-xxs {
+  font-size: 0.8rem;
 }
 .font-xs {
   font-size: 1rem;
@@ -96,8 +104,12 @@ p {
   flex-wrap: wrap;
   row-gap: 0.5rem;
   column-gap: 0.5rem;
-  border-top: 2px solid;
+  border-bottom: 2px solid;
   padding: 0.5rem 1.5rem;
+  position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: white;
 }
 .row-banner-footer {
   display: flex;
@@ -136,6 +148,10 @@ p {
   border-top: 2px solid;
 }
 .btn-action {
+  font-size: 1rem;
+    font-weight: 900;
+    max-width: 500px;
+    width: 100%;
   background-color: #b11a28;
   color: white;
   border-radius: 0;

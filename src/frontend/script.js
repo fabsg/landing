@@ -1,6 +1,7 @@
 
   window.addEventListener('DOMContentLoaded', function() {
     var header = document.querySelector('header');
+    var rowBanner = document.getElementById('sticky-timer');
     var main = document.querySelector('main');
     var footer = document.querySelector('footer');
 
@@ -8,6 +9,8 @@
     var footerHeight = footer.offsetHeight;
     main.style.marginTop = headerHeight + 'px';
     main.style.marginBottom = footerHeight + 'px';
+    rowBanner.style.top = headerHeight + 'px';
+
 
   });
 

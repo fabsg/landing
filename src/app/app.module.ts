@@ -13,10 +13,6 @@ import { AppController } from './app.controller';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'src', 'frontend', 'assets'),
-      serveRoot: '/assets',
-    }),
-    ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'src', 'frontend'),
       serveRoot: '/',
     }),

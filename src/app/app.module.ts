@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LandingController } from './landing/landing.controller';
 import { Landing } from './landing/landing.entity';
@@ -9,6 +9,7 @@ import { join } from 'path';
 import { EmailSchedulerService } from './emailScheduler/emailScheduler.services';
 import { ExcelService } from './excel/excel.services';
 import { AppController } from './app.controller';
+import { RateLimiterMiddleware } from './rate-limiter.middleware';
 
 @Module({
   imports: [
@@ -29,4 +30,8 @@ import { AppController } from './app.controller';
   providers: [ExcelService, LandingService, EmailSchedulerService],
   exports: [ExcelService, LandingService]
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(RateLimiterMiddleware).forRoutes(LandingController);
+  }
+}

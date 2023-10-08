@@ -9,7 +9,7 @@ export class ExcelService {
       {header: 'Cognome', key: 'surname', width: 30},
       {header: 'Email', key: 'email', width: 30},
       {header: 'Cellulare', key: 'phone', width: 30},
-      {header: 'Preferenza di contatto', key: 'preferredContactDate', width: 30}
+      {header: 'Data di creazione', key: 'createdAt', width: 30}
      ];
     worksheet.addRows(data);
     await workbook.xlsx.writeFile(`${filePath}`);

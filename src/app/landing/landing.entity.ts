@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
 
 @Entity()
 export class Landing {
@@ -17,6 +17,12 @@ export class Landing {
   @Column()
   phone: string;
 
-  @Column({ type: 'date' })
-  preferredContactDate: Date;
+  @Column({ type: 'date', nullable: true })
+  createdAt: Date;
+
+  @BeforeInsert()
+  setCreatedAt() {
+    this.createdAt = new Date();
+  }
+
 }

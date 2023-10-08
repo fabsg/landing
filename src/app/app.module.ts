@@ -29,9 +29,12 @@ import { RateLimiterMiddleware } from './rate-limiter.middleware';
     */
 
   ],
-  controllers: [AppController, LandingController],
-  providers: [ExcelService, LandingService, EmailSchedulerService],
-  exports: [ExcelService, LandingService]
+  controllers: [AppController],
+    //LandingController],
+  providers: [],
+  //[ExcelService, LandingService, EmailSchedulerService],
+  exports: []
+  //[ExcelService, LandingService]
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

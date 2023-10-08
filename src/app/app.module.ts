@@ -25,8 +25,9 @@ import { RateLimiterMiddleware } from './rate-limiter.middleware';
       entities: [Landing],
       synchronize: true,
     }),
-    */
     TypeOrmModule.forFeature([Landing]),
+    */
+
   ],
   controllers: [AppController, LandingController],
   providers: [ExcelService, LandingService, EmailSchedulerService],

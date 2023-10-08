@@ -18,12 +18,14 @@ import { RateLimiterMiddleware } from './rate-limiter.middleware';
       serveRoot: '/',
     }),
     ScheduleModule.forRoot(),
+    /*
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'landing.db',
       entities: [Landing],
       synchronize: true,
     }),
+    */
     TypeOrmModule.forFeature([Landing]),
   ],
   controllers: [AppController, LandingController],

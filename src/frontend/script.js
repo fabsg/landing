@@ -21,7 +21,8 @@
 
   window.addEventListener("scroll", hideElementIfVisible);
 
-  function onClickSendFormData() {    
+  function onClickSendFormData() {
+    console.log('onClickSendFormData')
       const buttonSave = document.getElementById('btn-save');
       buttonSave.setAttribute('disabled', 'disabled');
       const nomeInput = document.getElementById('nome');

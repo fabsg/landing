@@ -113,8 +113,13 @@
     }
   }
 
-  function setBaseRem() {
-    var windowWidth = window.innerWidth;
+  function pxToRem(px) {
+    return (px/getCurrentBaseRem()) + 'rem';
+  }
+
+  function getCurrentBaseRem() {
+    const windowWidth = window.innerWidth;
+    let baseRem = 16;
   
     if (windowWidth >= 1200) {
       baseRem = 32;
@@ -125,8 +130,11 @@
     } else {
       baseRem = 16;
     }
-  
-    document.documentElement.style.fontSize = baseRem + 'px';
+    return baseRem
+  }
+
+  function setBaseRem() {
+    document.documentElement.style.fontSize = getCurrentBaseRem() + 'px';
   }
     
   window.addEventListener('resize', setBaseRem);
@@ -175,3 +183,20 @@
           setTimeout(displayTimer, 1000);
         }
       }
+
+function accordionManaging() {  
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = pxToRem(panel.scrollHeight);
+      }
+    });
+  }
+}

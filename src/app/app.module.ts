@@ -18,7 +18,6 @@ import { RateLimiterMiddleware } from './rate-limiter.middleware';
       serveRoot: '/',
     }),
     ScheduleModule.forRoot(),
-    /*
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'landing.db',
@@ -26,15 +25,10 @@ import { RateLimiterMiddleware } from './rate-limiter.middleware';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([Landing]),
-    */
-
   ],
-  controllers: [AppController],
-    //LandingController],
-  providers: [],
-  //[ExcelService, LandingService, EmailSchedulerService],
-  exports: []
-  //[ExcelService, LandingService]
+  controllers: [AppController, LandingController],
+  providers: [ExcelService, LandingService, EmailSchedulerService],
+  exports: [ExcelService, LandingService]
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

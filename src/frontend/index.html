@@ -59,6 +59,44 @@
         </div>
 
         <div class="wrapper flex column bkg-white gap-md">
+          <h3 class="text-red">CARATTERISTICHE</h3>
+        
+          <p>
+            Selezione automatica dei corpi pesanti con scarico ribaltabile
+          </p>
+        
+          <p> Lavaggio e pulizia totale delle olive con un piano soffiante idropneumatico </p>
+        
+          <p>
+            Crivello vibrante per la sgrondatura dell'acqua (doccia finale al bisogno tramite ugelli inclusi)
+          </p>
+        
+          <p>
+            La coclea forata per l'espulsione di rami e foglie, posta sotto il crivello, garantisce il loro convogliamento
+            orientabile a destra o sinistra.
+          </p>
+        
+          <p>
+            Costruzione completa in acciaio Inox AISI 304
+          </p>
+        
+          <p>
+            Capacità di produzione 50 qt/h
+          </p>
+        
+          <p>
+            Azionamento con motori elettrici trifase
+          </p>
+        
+          <p>
+            Normativa CE
+          </p>
+        
+          <img src="./assets/scheda_tecnica.png" alt="scheda_tecnica">
+        
+        </div>
+
+        <div class="wrapper flex column bkg-white gap-md">
           <h3 class="text-red">SODDISFATTO O RIMBORSATO</h3>
 
           <div class="flex gap-md align-center">
@@ -89,7 +127,7 @@
                 Per cui, non perdere tempo e lascia i tuoi contatti!
               </p>
             </div>
-            </div>
+        </div>
 
         <div class="wrapper flex column bkg-blue gap-md">
           <h3>PERCHÈ SCEGLIERCI?</h3>
@@ -107,97 +145,142 @@
           </div>
 
           <div>
-            <video class="video-max" width="100%" controls playsinline>
-              <source src="./assets/abrams_video.mp4" type="video/mp4">
+            <video class="video-max" width="100%" controls playsinline preload="metadata">
+              <source src="./assets/abrams_video.mp4#t=0.5" type="video/mp4">
               Il tuo browser non supporta il formato video
             </video>
           </div>
         </div>
-      <div class="wrapper flex column align-center bkg-white">
-        <form id="contact-form">
-          <div class="flex" style="justify-content: space-between;">
-            <div class="flex column" style="width: 48%;">
-              <label class="font-xxs" for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" required pattern="[a-zA-Z]{2,}"
-                title="Il campo nome deve contenere almeno due caratteri e deve essere composto solo da lettere.">
-            </div>
-          <div class="flex column" style="width: 48%;">
-            <label class="font-xxs" for="cognome">Cognome:</label>
-            <input type="text" id="cognome" name="cognome" required pattern="[a-zA-Z]{2,}"
-              title="Il campo cognome deve contenere almeno due caratteri e deve essere composto solo da lettere.">
-          </div>
-          </div>
-        <div class="flex column">
-          <label class="font-xxs" for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+        <div class="flex wrapper row-banner-footer" style="justify-content: center;" id="contact-button-wrapper">
+          <button class="btn-action" onclick="onClickContactButton()" id="btn-contact">
+            CONTATTACI SUBITO!
+          </button>
         </div>
         
-        <div class="flex column">
-          <label class="font-xxs" for="telefono">Telefono:</label>
-          <input type="tel" id="telefono" name="telefono" required
-            pattern="^(?:(?:\+|00)39)?\s?(?:3[0-9]{2}|0[0-9]{2}|[89][0-9]{2})\s?[0-9]{6,7}$"
-            title="Inserisci un numero di telefono valido">
+        
+        <div class="wrapper flex column align-center gap-md" id="success">
+          <div style="text-align: center;">I tuoi dati sono stati salvati correttamente! Verrai ricontattato presto.</div>
+          <div><img src="./assets/success-icon-10.png" alt="success-icon" class="icon-status"></div>
+          <div style="text-align: center;">Per scoprire di più su di noi visita il nostro sito <a
+              href="https://www.abramsimpianti.com/" target="_blank">Abrams
+              Impianti</a></div>
         </div>
         
-        <div class="flex gap-md align-center">
-          <input class="checkbox" type="checkbox" id="privacy-checkbox" name="privacy-checkbox" required>
-          <span class="font-xxs">
-            Accetto la <a href="" target="_blank">privacy policy</a> e l'
-            <a href="" target="_blank">Informativa trattemento dei dati personali</a>
-          </span>
-        
+        <div class="wrapper flex column align-center gap-md" id="error">
+          <div style="text-align: center;">L'operazione non è andata a buon fine!</div>
+          <div><img src="./assets/error_icon.png" alt="error-icon" class="icon-status"></div>
+          <button class="btn-action" onclick="onClickRetry()">
+            RIPROVA
+          </button>
         </div>
         
-        <input type="text" name="honeypot" style="display:none;" id="honeypot">
-        </form>
-
-      </div>
-
-      <div class="wrapper flex column align-center bkg-img">
-        <h3 class="width-100">FAQ</h3>
-      
-        <div class="flex column gap-md space-sm width-100">
-          <div class="width-100">
-            <button class="accordion">Titolo Accordion 1</button>
-            <div class="panel">
-      
-              <div style="padding: 1rem;">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto dicta temporibus autem minus incidunt
-                iste
-                eum? Natus, ducimus? Aut molestiae praesentium ipsum temporibus facere quam esse non iste perferendis
-                accusantium.
+        <div class="wrapper flex column align-center bkg-white" id="form-wrapper">
+          <form id="contact-form" style="position: relative;">
+        
+            <div class="loader" id="form-loader"></div>
+            <div class="flex" style="justify-content: space-between;">
+              <div class="flex column" style="width: 48%;">
+                <label class="font-xxs" for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required pattern="[a-zA-Z]{2,}"
+                  title="Il campo nome deve contenere almeno due caratteri e deve essere composto solo da lettere.">
+              </div>
+              <div class="flex column" style="width: 48%;">
+                <label class="font-xxs" for="cognome">Cognome:</label>
+                <input type="text" id="cognome" name="cognome" required pattern="[a-zA-Z]{2,}"
+                  title="Il campo cognome deve contenere almeno due caratteri e deve essere composto solo da lettere.">
               </div>
             </div>
-          </div>
-      
-          <div class="width-100">
-            <button class="accordion">Titolo Accordion 2</button>
-            <div class="panel">
-      
-              <div style="padding: 1rem;">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto dicta temporibus autem minus incidunt
-                iste
-                eum? Natus, ducimus? Aut molestiae praesentium ipsum temporibus facere quam esse non iste perferendis
-                accusantium.
-              </div>
+            <div class="flex column">
+              <label class="font-xxs" for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
             </div>
+        
+            <div class="flex column">
+              <label class="font-xxs" for="telefono">Telefono:</label>
+              <input type="tel" id="telefono" name="telefono" required
+                pattern="^(?:(?:\+|00)39)?\s?(?:3[0-9]{2}|0[0-9]{2}|[89][0-9]{2})\s?[0-9]{6,7}$"
+                title="Inserisci un numero di telefono valido">
+            </div>
+        
+            <div class="flex gap-md align-center">
+              <input class="checkbox" type="checkbox" id="privacy-checkbox" name="privacy-checkbox" required>
+              <span class="font-xxs">
+                Accetto la <a href="" target="_blank">privacy policy</a> e l'
+                <a href="" target="_blank">Informativa trattemento dei dati personali</a>
+              </span>
           </div>
-      
-        </div>
-      
-      </div>
+          
+          <input type="text" name="honeypot" style="display:none;" id="honeypot">
+  <button class="btn-action" onclick="onClickSendFormData()" id="btn-save">
+    INVIA
+  </button>
+          </form>
 
-        </main>
-        <footer class="sticky-footer">
-          <div class="flex wrapper" style="justify-content: center;">
-            <button class="btn-action" onclick="onClickContactButton()" id="btn-contact">
-              CONTATTACI SUBITO!
-            </button>
-            <button class="btn-action" onclick="onClickSendFormData()" id="btn-save">
-              INVIA
-            </button>
+        </div>
+
+        <div class="wrapper flex column align-center bkg-img">
+          <h3 class="width-100">FAQ</h3>
+        
+          <div class="flex column gap-md space-sm width-100">
+            <div class="width-100">
+              <button class="accordion">Qual è la portata oraria?</button>
+              <div class="panel">
+              
+                <div style="padding: 1rem;">
+                  La lavatrice è indicata per olive raccolte da scuotitore o pettine per una portata oraria di 50qt/h. In ogni caso
+                  disponiamo di modelli più performanti per olive raccolte principalmente da terra.
+                </div>
+              </div>
+              </div>
+              
+              <div class="width-100">
+                <button class="accordion">Quanto consuma la macchina?</button>
+                <div class="panel">
+              
+                  <div style="padding: 1rem;">
+                    Puntiamo quotidianamente alla sostenibilità e al risparmio energetico, consumando SOLO 4.5 kW.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="width-100">
+                <button class="accordion">Dimensioni?</button>
+                <div class="panel">
+              
+                  <div style="padding: 1rem;">
+                    Alla base circa 2000 x 1150 x h1500
+                  </div>
+                </div>
+              </div>
+              
+              <div class="width-100">
+                <button class="accordion">È rumorosa?</button>
+                <div class="panel">
+              
+                  <div style="padding: 1rem;">
+                        Non è assolutamente rumorosa!
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <div class="width-100">
+              <button class="accordion">Le pietre e corpi pesanti vengono rimossi?</button>
+              <div class="panel">
+              
+                <div style="padding: 1rem;">
+                  Certamente, la macchina dispone di una vasca ribaltabile che tramite peso specifico fa adagiare i corpi pesanti nella
+                  parte sottostante. In un secondo momento mediante pistone pneumatico è possibile ribaltare la vasca superiore ed
+                  espellere il tutto.
+                  </div>
+                  </div>
+                  </div>
+
+
           </div>
-  </footer>
+          
+          </div>
+
+      </main>
 
   <script src="script.js"></script>
   <script>displayTimer();</script>

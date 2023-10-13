@@ -120,8 +120,13 @@ p {
   flex-wrap: wrap;
   row-gap: 0.5rem;
   column-gap: 0.5rem;
-  border-bottom: 2px solid;
+  border-top: 2px solid;
   padding: 0.5rem 1.5rem;
+  z-index: 900;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    background: white;
 }
 .sticky-header {
   position: fixed;
@@ -228,4 +233,40 @@ form {
 .bkg-img {
   background: url("https://www.abramsimpianti.com/wp-content/uploads/2022/03/ABRAMS-ASSISTENZA-H-24-1024x683.jpeg");
   background-size: cover;
+}
+.loader {
+  visibility: hidden;
+  position: absolute;
+  left: calc(50% - 2rem);
+  bottom: 50%;
+  border: 0.5rem solid #f3f3f3;
+  border-top: 0.5rem solid #255daa;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#success {
+  display: none;
+  background-color: white;
+}
+
+#error {
+  display: none;
+  background-color: white;
+}
+
+.icon-status {
+  width: 5rem;
 }

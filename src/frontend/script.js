@@ -3,28 +3,42 @@
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    hideElementIfVisible();
     validateForm()
     const header = document.querySelector('header');
     const rowBanner = document.getElementById('sticky-timer');
     const main = document.querySelector('main');
-    const footer = document.querySelector('footer');
-
     const headerHeight = header.offsetHeight;
-    const footerHeight = footer.offsetHeight;
     main.style.marginTop = headerHeight + 'px';
-    main.style.marginBottom = footerHeight + 'px';
     rowBanner.style.top = headerHeight + 'px';
     window.scrollTo(0, 0);
 
   });
 
-  window.addEventListener("scroll", hideElementIfVisible);
+  function hideForm() {
+    const formWrapper = document.getElementById('form-wrapper');
+    const contactBtnWrapper = document.getElementById('contact-button-wrapper');
+    contactBtnWrapper.style.display = 'none';
+    formWrapper.style.display = 'none';
+  }
+
+  function showForm() {
+    const formWrapper = document.getElementById('form-wrapper');
+    const contactBtnWrapper = document.getElementById('contact-button-wrapper');
+    contactBtnWrapper.style.display = 'flex';
+    formWrapper.style.display = 'flex';
+  }
+
+  function onClickRetry() {
+    showForm();
+    const errorPage = document.getElementById('error');
+    errorPage.style.display = 'none';
+  }
 
   function onClickSendFormData() {
-    console.log('onClickSendFormData')
       const buttonSave = document.getElementById('btn-save');
       buttonSave.setAttribute('disabled', 'disabled');
+      const formLoader = document.getElementById('form-loader');
+      formLoader.style.visibility = 'visible';
       const nomeInput = document.getElementById('nome');
       const cognomeInput = document.getElementById('cognome');
       const emailInput = document.getElementById('email');
@@ -63,38 +77,23 @@
           })
         })
           .then(response => response.json())
-          .then(data => {
-            console.log('success page')
-            // Handle the response data
-            console.log("success", data);
+          .then(() => {
+            formLoader.style.visibility = 'hidden';
+            hideForm();
+            const successPage = document.getElementById('success');
+            successPage.style.display = 'flex';
           })
-          .catch(error => {
-            // Handle any errors
-            console.error("error", error);
+          .catch(() => {
+            hideForm();
+            const errorPage = document.getElementById('error');
+            errorPage.style.display = 'flex';
+            formLoader.style.visibility = 'hidden';
           });
       } else {
         console.log('form non valido error page')
       }
 
   }
-
-  function hideElementIfVisible() {
-    var form = document.getElementById("contact-form");
-    var buttonContact = document.getElementById("btn-contact");
-    var buttonSave = document.getElementById("btn-save");
-
-    var sectionRect = form.getBoundingClientRect();
-    var windowHeight = window.innerHeight;
-  
-    if (sectionRect.top < windowHeight && sectionRect.bottom >= 0) {
-      buttonContact.style.display = "none";
-      buttonSave.style.display = "block";
-    } else {
-      buttonContact.style.display = "block";
-      buttonSave.style.display = "none";
-    }
-  }
-
 
   const form = document.getElementById('contact-form');
   const button = document.getElementById('btn-save');
@@ -150,39 +149,39 @@
     });
   }
 
-  function calculateTimeRemaining() {
-    var now = new Date();
-    var targetDate = new Date("2023-11-23");
+function calculateTimeRemaining() {
+  var now = new Date();
+  var targetDate = new Date("2023-11-23");
 
-    var timeRemaining = targetDate - now;
+  var timeRemaining = targetDate - now;
 
-    var seconds = Math.floor((timeRemaining / 1000) % 60);
-    var minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
-    var hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  var seconds = Math.floor((timeRemaining / 1000) % 60);
+  var minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+  var hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
-    return {
-      'total': timeRemaining,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-    };
-  }
+  return {
+    'total': timeRemaining,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
 
-  function displayTimer() {
-    var timerElement = document.getElementById("timer");
-    var time = calculateTimeRemaining();
+function displayTimer() {
+  var timerElement = document.getElementById("timer");
+  var time = calculateTimeRemaining();
 
-  timerElement.innerHTML = time.days + " giorni, " +
-    time.hours + " ore, " +
-    time.minutes + " minuti, " +
-    time.seconds + " secondi";
+timerElement.innerHTML = time.days + " giorni, " +
+  time.hours + " ore, " +
+  time.minutes + " minuti, " +
+  time.seconds + " secondi";
 
-        if (time.total > 0) {
-          setTimeout(displayTimer, 1000);
-        }
+      if (time.total > 0) {
+        setTimeout(displayTimer, 1000);
       }
+}
 
 function accordionManaging() {  
   var acc = document.getElementsByClassName("accordion");

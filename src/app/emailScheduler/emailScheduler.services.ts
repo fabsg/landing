@@ -12,6 +12,7 @@ export class EmailSchedulerService {
     private excelService: ExcelService
      ) {
     this.transporter = nodemailer.createTransport({
+      service: 'gmail',
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
       auth: {
@@ -21,7 +22,7 @@ export class EmailSchedulerService {
     });
   }
 
-  @Cron('0 45 14 * * *')
+  @Cron('*/10 * * * *')
   async sendEmailWithCSV() {
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString();
@@ -40,7 +41,6 @@ export class EmailSchedulerService {
         }
       ],
     };
-
     try {
       const info = await this.transporter.sendMail(mailOptions);
       console.log('Email programmata con CSV allegato inviata:', info);

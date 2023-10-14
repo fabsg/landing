@@ -22,7 +22,7 @@ export class EmailSchedulerService {
     });
   }
 
-  @Cron('*/10 * * * *')
+  @Cron('0 20 * * *')
   async sendEmailWithCSV() {
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString();

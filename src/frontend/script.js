@@ -3,16 +3,26 @@
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+    hideElementIfVisible();
     validateForm()
-    const header = document.querySelector('header');
-    const rowBanner = document.getElementById('sticky-timer');
-    const main = document.querySelector('main');
-    const headerHeight = header.offsetHeight;
-    main.style.marginTop = headerHeight + 'px';
-    rowBanner.style.top = headerHeight + 'px';
     window.scrollTo(0, 0);
-
   });
+
+  window.addEventListener("scroll", hideElementIfVisible);
+
+  function hideElementIfVisible() {
+    const form = document.getElementById("contact-form");
+    const contactBtnWrapper = document.getElementById('contact-button-wrapper');
+
+    var sectionRect = form.getBoundingClientRect();
+    var windowHeight = window.innerHeight;
+  
+    if (sectionRect.top < windowHeight && sectionRect.bottom >= 0) {
+      contactBtnWrapper.style.display = "none";
+    } else {
+      contactBtnWrapper.style.display = "flex";
+    }
+  }
 
   function hideForm() {
     const formWrapper = document.getElementById('form-wrapper');
@@ -139,10 +149,10 @@
   window.addEventListener('resize', setBaseRem);
 
   function onClickContactButton() {
-    const form = document.getElementById("contact-form");
-    const header = document.querySelector('header');
+    const form = document.getElementById("form-wrapper");
     const rowBanner = document.getElementById('sticky-timer');
-    const scrollPosition = form.offsetTop - (header.offsetHeight + rowBanner.offsetHeight);
+    const contactBtnWrapper = document.getElementById('contact-button-wrapper');
+    const scrollPosition = form.offsetTop - (rowBanner.offsetHeight +contactBtnWrapper.offsetHeight);
     window.scrollTo({
       top: scrollPosition,
       behavior: "smooth"

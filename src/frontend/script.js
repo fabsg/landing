@@ -65,8 +65,8 @@
 
       //regex
       const textRegex = /^[a-zA-Z]{2,}$/;
-      const phoneRegex = /^(?:(?:\+|00)39)?\s?(?:3[0-9]{2}|0[0-9]{2}|[89][0-9]{2})\s?[0-9]{6,7}$/;
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+      const phoneRegex = /^\+?[0-9]{5,}$/;
+      const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/i;
 
       if(nomeVal && textRegex.test(nomeVal) && 
       cognomeVal && textRegex.test(cognomeVal) && 

@@ -18,16 +18,16 @@
 <body>
 
     <header class="sticky-header">
-      <div class="wrapper flex column">
+      <div class="wrapper flex column align-center gap-sm">
         <div class="flex row align-center">
           <img class="logo" src="./assets/logo.png" alt="logo">
-          <div>
-            <img src="./assets/abrams_red.png" class="img-mini" alt="abrams inox logo">
-            <img src="./assets/abrams_yellow.png" class="img-mini" alt="abrams food logo">
-            <img src="./assets/abrams_green.png" class="img-mini" alt="abrams eco logo">
-          </div>
         </div>
         <p class="font-xs" style="font-weight: 400">macchine innovative per l'agricoltura</p>
+        <div>
+          <img src="./assets/abrams_red.png" class="img-mini" alt="abrams inox logo">
+          <img src="./assets/abrams_yellow.png" class="img-mini" alt="abrams food logo">
+          <img src="./assets/abrams_green.png" class="img-mini" alt="abrams eco logo">
+        </div>
         </div>
     </header>
     <main>
@@ -63,7 +63,7 @@
           <p>Design 100% Made in italy</p>
         </div>
 
-        <div class="wrapper flex column bkg-white gap-sm">
+        <div class="wrapper flex column bkg-white gap-sm" style="padding-bottom: 0;">
           <h3 class="text-red">CARATTERISTICHE</h3>
           <ul class="ul-space">
             <li>
@@ -111,7 +111,7 @@
         
         </div>
 
-        <div class="wrapper flex column bkg-white gap-md">
+        <div class="wrapper flex column bkg-white gap-md" style="padding-top: 0;">
           <h3 class="text-red">SODDISFATTO O RIMBORSATO</h3>
 
           <div class="flex gap-md align-center">
@@ -207,14 +207,13 @@
             </div>
             <div class="flex column">
               <label class="font-xxs" for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$">
             </div>
         
             <div class="flex column">
               <label class="font-xxs" for="telefono">Telefono:</label>
               <input type="tel" id="telefono" name="telefono" required
-                pattern="^(?:(?:\+|00)39)?\s?(?:3[0-9]{2}|0[0-9]{2}|[89][0-9]{2})\s?[0-9]{6,7}$"
-                title="Inserisci un numero di telefono valido">
+              pattern="\+?[0-9]{5,}" title="Inserisci un numero di telefono valido (minimo 5 cifre, ammessi solo numeri e il simbolo '+')" >
             </div>
         
             <div class="flex gap-md align-center">

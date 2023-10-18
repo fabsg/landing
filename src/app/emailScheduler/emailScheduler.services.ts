@@ -28,7 +28,7 @@ export class EmailSchedulerService {
     const formattedDate = currentDate.toLocaleDateString();
     const formattedTime = currentDate.toLocaleTimeString();
     const contactData = await this.landingService.fetchData() || [];
-    await this.excelService.generateExcel(contactData, process.env.PATH_NAME_FOR_XLSX);
+    const excelFile= await this.excelService.generateExcel(contactData);
     const mailOptions = {
       from: process.env.EMAIL_SENDER_USER,
       to: process.env.RECEIVER_EMAIL,
@@ -36,8 +36,8 @@ export class EmailSchedulerService {
       text: '"Questa è una email autogenerata. Si prega di non rispondere a questo indirizzo email."',
       attachments: [
         {
-          filename: process.env.XLSX_NAME,
-          path: process.env.PATH_NAME_FOR_XLSX
+          filename: excelFile.filename,
+          content: excelFile.content
         }
       ],
     };

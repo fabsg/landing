@@ -53,33 +53,12 @@ export class EmailSchedulerService {
 
   async sendEmailToCustomer(contact: Landing) {
     const source = fs.readFileSync('src/app/templates/email-template.html', 'utf-8');
-    const backgroundImagePath = 'src/frontend/assets/bg_1.jpeg';
-    const logoPath = 'src/frontend/assets/logo.png';
-    const backgroundImagePath2 = 'src/frontend/assets/lavatrice_olive-removebg.png';
 
     const mailOptions = {
       from: process.env.EMAIL_SENDER_USER,
       to: contact.email,
       subject: `Benvenuto in Abrams!`,
-      html: source,
-      attachments: [
-        {
-        filename: 'bg_1.jpeg',
-        path: backgroundImagePath,
-        cid: 'background-image',
-      },
-      {
-        filename: 'logo.png',
-        path: logoPath,
-        cid: 'logo',
-      },
-      {
-        filename: 'lavatriceOlive.png',
-        path: backgroundImagePath2,
-        cid: 'background-2',
-      }
-
-    ],
+      html: source
     };
     try {
       const info = await this.transporter.sendMail(mailOptions);

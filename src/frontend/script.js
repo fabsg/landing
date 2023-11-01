@@ -54,14 +54,12 @@
       const emailInput = document.getElementById('email');
       const telefonoInput = document.getElementById('telefono');
       const honeypotInput = document.getElementById('honeypot');
-      const privacyCheckInput = document.getElementById('privacy-checkbox');
-  
+
       const nomeVal = nomeInput.value;
       const cognomeVal = cognomeInput.value;
       const emailVal = emailInput.value;
       const telefonoVal = telefonoInput.value;
       const honeypotVal = honeypotInput.value;
-      const privacyCheckVal = privacyCheckInput.value;
 
       //regex
       const textRegex = /^[a-zA-Z]{2,}$/;
@@ -72,7 +70,7 @@
       cognomeVal && textRegex.test(cognomeVal) && 
       emailVal && emailRegex.test(emailVal) &&
       telefonoVal && phoneRegex.test(telefonoVal) &&
-      !honeypotVal && privacyCheckVal 
+      !honeypotVal
       ) {
         fetch('/landing', {
           method: 'POST',

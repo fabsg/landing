@@ -277,3 +277,9 @@ form {
   margin-block-end: 0;
   padding-inline-start: 1rem;
 }
+#cookie-section>div:first-child {
+  height: 100%;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

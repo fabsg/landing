@@ -279,7 +279,7 @@ form {
 }
 #cookie-section>div:first-child {
   height: 100%;
-  width: 100%;
+  padding: 1.5rem;
   text-overflow: ellipsis;
   overflow: hidden;
 }

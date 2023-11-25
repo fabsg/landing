@@ -159,10 +159,10 @@
 
 function calculateTimeRemaining() {
   var now = new Date();
-  var targetDate = new Date("2023-11-23");
-
+  var nextThursday = (2+7- now.getDay())%7;
+  var targetDate = new Date(now.getTime() + nextThursday *24*60*60*1000);
+  targetDate.setHours(23,59,59,999)
   var timeRemaining = targetDate - now;
-
   var seconds = Math.floor((timeRemaining / 1000) % 60);
   var minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
   var hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);

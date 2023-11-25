@@ -13,6 +13,11 @@ async function bootstrap() {
       cert: fs.readFileSync(process.env.SSL_CERT_PATH)
     }
   });
+
+  app.enableCors({
+    origin: ['https://abramsagricoltura.it/', 'https://www.abramsagricoltura.it/'],
+    methods: 'GET, HEAD,PUT,PATCH,POST,DELETE'
+  });
   await app.listen(process.env.APPLICATION_PORT);
 
   const emailSchedulerService = app.get(EmailSchedulerService);

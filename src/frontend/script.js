@@ -5,6 +5,9 @@
     }
     hideElementIfVisible();
     validateForm()
+    displayTimer();
+    accordionManaging()
+    setBaseRem();
     window.scrollTo(0, 0);
   });
 

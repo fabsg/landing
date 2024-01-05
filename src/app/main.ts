@@ -20,7 +20,8 @@ async function bootstrap() {
   });
 
   app.use((req, res, next)=> {
-    if(req.protocol !== 'https') {
+    const isSecure = req.headers['x-forwarded-proto'] === 'https' || req.secure || req.headers['x-arr-ssl'];
+    if(!isSecure) {
       res.redirect(`https://${req.headers.host}${req.url}`)
     } else {
       next();

@@ -13,6 +13,16 @@
 
   window.addEventListener("scroll", hideElementIfVisible);
 
+  document.addEventListener("visibilitychange", ()=> {
+    if(document.visibilityState === 'visible') {
+      hideElementIfVisible();
+      validateForm()
+      displayTimer();
+      accordionManaging()
+      setBaseRem();
+    }
+  })
+
   function hideElementIfVisible() {
     const form = document.getElementById("contact-form");
     const contactBtnWrapper = document.getElementById('contact-button-wrapper');

@@ -18,6 +18,15 @@ async function bootstrap() {
     origin: ['https://abramsagricoltura.it/', 'https://www.abramsagricoltura.it/'],
     methods: 'GET, HEAD,PUT,PATCH,POST,DELETE'
   });
+
+  app.use((req, res, next)=> {
+    if(req.protocol !== 'https') {
+      res.redirect(`https://${req.headers.host}${req.url}`)
+    } else {
+      next();
+    }
+  })
+
   await app.listen(process.env.APPLICATION_PORT);
 
   const emailSchedulerService = app.get(EmailSchedulerService);

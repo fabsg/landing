@@ -1,26 +1,34 @@
 
   window.addEventListener('load', function() {
-    console.log('onLoad trigger')
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    hideElementIfVisible();
-    validateForm()
-    displayTimer();
-    accordionManaging()
-    setBaseRem();
-    window.scrollTo(0, 0);
+    if(!window.initExecuted) {
+      hideElementIfVisible();
+      validateForm()
+      displayTimer();
+      accordionManaging()
+      setBaseRem();
+      window.scrollTo(0, 0);
+      window.initExecuted = true;
+      console.log('initExecuted onload')
+    }
+
   });
 
   window.addEventListener("scroll", hideElementIfVisible);
 
   document.addEventListener("visibilitychange", ()=> {
     if(document.visibilityState === 'visible') {
-      hideElementIfVisible();
-      validateForm()
-      displayTimer();
-      accordionManaging()
-      setBaseRem();
+      if(!window.initExecuted) { 
+        hideElementIfVisible();
+        validateForm()
+        displayTimer();
+        accordionManaging()
+        setBaseRem();
+        window.initExecuted = true;
+        console.log('initExecuted visibilitychange')
+      }
     }
   })
 

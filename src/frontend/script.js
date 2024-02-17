@@ -1,5 +1,5 @@
 
-  window.addEventListener('load', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -11,9 +11,8 @@
       setBaseRem();
       window.scrollTo(0, 0);
       window.initExecuted = true;
-      console.log('initExecuted onload')
+      console.log('initExecuted on DOMContentLoaded')
     }
-
   });
 
   window.addEventListener("scroll", hideElementIfVisible);

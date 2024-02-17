@@ -1,4 +1,12 @@
 
+  const form = document.getElementById('contact-form');
+  const button = document.getElementById('btn-save');
+
+  const formFields = form.querySelectorAll('input, select, textarea');
+  formFields.forEach(field => {
+    field.addEventListener('input', validateForm);
+  });
+
   document.addEventListener('DOMContentLoaded', function() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -124,14 +132,6 @@
 
   }
 
-  const form = document.getElementById('contact-form');
-  const button = document.getElementById('btn-save');
-
-  const formFields = form.querySelectorAll('input, select, textarea');
-  formFields.forEach(field => {
-    field.addEventListener('input', validateForm);
-  });
-
   function validateForm() {
     let isValid = Array.from(formFields).every(field => field.checkValidity());
     if (isValid) {
@@ -201,14 +201,13 @@ function displayTimer() {
   var timerElement = document.getElementById("timer");
   var time = calculateTimeRemaining();
 
-timerElement.innerHTML = time.days + " giorni, " +
-  time.hours + " ore, " +
-  time.minutes + " minuti, " +
-  time.seconds + " secondi";
-
-      if (time.total > 0) {
-        setTimeout(displayTimer, 1000);
-      }
+  timerElement.innerHTML = time.days + " giorni, " +
+    time.hours + " ore, " +
+    time.minutes + " minuti, " +
+    time.seconds + " secondi";
+    if (time.total > 0) {
+      setTimeout(displayTimer, 1000);
+    }
 }
 
 function accordionManaging() {  

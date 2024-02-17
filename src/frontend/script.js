@@ -1,5 +1,6 @@
 
-  window.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('load', function() {
+    console.log('onLoad trigger')
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -172,8 +173,7 @@
 
 function calculateTimeRemaining() {
   var now = new Date();
-  var nextThursday = (2+7- now.getDay())%7;
-  var targetDate = new Date(now.getTime() + nextThursday *24*60*60*1000);
+  var targetDate = new Date('2024-03-31');
   targetDate.setHours(23,59,59,999)
   var timeRemaining = targetDate - now;
   var seconds = Math.floor((timeRemaining / 1000) % 60);

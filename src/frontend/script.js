@@ -7,6 +7,24 @@
     field.addEventListener('input', validateForm);
   });
 
+  window.onload = function() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (!window.initExecuted) {
+      hideElementIfVisible();
+      validateForm();
+      displayTimer();
+      accordionManaging();
+      setBaseRem();
+      window.scrollTo(0, 0);
+      window.initExecuted = true;
+      console.log('initExecuted on window.onload');
+    }
+  };
+
+  /*
+
   if(document.readyState !== 'loading') {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -38,7 +56,7 @@
     }
   });
 }
-  
+*/
 
   window.addEventListener("scroll", hideElementIfVisible);
 

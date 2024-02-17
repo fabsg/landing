@@ -7,6 +7,19 @@
     field.addEventListener('input', validateForm);
   });
 
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  if (!window.initExecuted) {
+    hideElementIfVisible();
+    validateForm();
+    displayTimer();
+    accordionManaging();
+    setBaseRem();
+    window.scrollTo(0, 0);
+    window.initExecuted = true;
+  }
+
   window.onload = function() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
